@@ -1,4 +1,4 @@
-<div>asdf</div>
+<div>{{app_name}}</div>
 
 <div>text view name<input type="text"
            id="rootFolder"
@@ -17,16 +17,14 @@ size="40"/></div>
 ng-model="current_text_view.text"
 size="40"/></div>
 
-<div>color <input type="text"
-ng-model="current_text_view.color"
-size="40"/></div>
+<div class="form-group">
+  <label for="wheel-demo">color</label>
+  <input type="text" id="wheel-demo" 
+  class="form-control demo" 
+  data-control="wheel" value="#ff99ee" 
+  ng-model="current_text_view.colorpick">
+</div>
 
-
-
-{{current_text_view}}
-
-{{text_views}}
-
-{{textViewName}}
+<!-- {{current_text_view}} -->
 
 <button ng-click="save_item(current_text_view)">Save</button>
