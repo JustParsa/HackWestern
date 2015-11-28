@@ -5,67 +5,103 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- start: CSS -->
+    <link id="bootstrap-style" href="styles/bootstrap.min.css" rel="stylesheet">
+    <link id="base-style" href="styles/style.css" rel="stylesheet">
+    <link id="base-style-responsive" href="styles/style-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="font/font-awesome-4.5.0/css/font-awesome.min.css">
+    <link href="styles/bootstrap-responsive.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- end: CSS -->
   </head>
+
   <body ng-app="dynamoUiApp">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
     <!-- Add your site or application content here -->
-    <div class="header" ng-cloak="">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
-
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-
-            <a class="navbar-brand" href="#/">dynamoUi</a>
+    <!-- <div class="header" ng-cloak=""> -->
+      <div class="navbar" role="navigation">
+        
+        <div class="navbar-inner">
+          <div class="container-fluid">
+          <a class="brand" href="index.html"><span>Dynamo</span></a>
+          
+          <!-- start: Header Menu -->
+            <div class="nav-no-collapse header-nav">
+              <ul class="nav pull-right">
+              <!-- start: User Dropdown -->
+              <li class="dropdown">
+                <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="halflings-icon white user"></i> Hack Western
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="dropdown-menu-title">
+                    <span>Account Settings</span>
+                  </li>
+                  <li><a href="#"><i class="halflings-icon user"></i> Profile</a></li>
+                  <li><a href="login.html"><i class="halflings-icon off"></i> Logout</a></li>
+                </ul>
+                </li>
+                <!-- end: User Dropdown -->
+              </ul>
+            </div>
           </div>
+        </div>
+          <!-- end: nav bar inner -->
+      </div>
+      <!-- </div> -->
+      <!-- end: Header Menu -->
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+      <div class="container-fluid-full">
+      <div class="row-fluid">
+        <!-- start: sidebar Menu -->
+        <div id="sidebar-left" class="span2">
+          <div class="nav-collapse sidebar-nav">
+            <ul class="nav nav-tabs nav-stacked main-menu">
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <!-- //angularfire -->
-              <li><a ng-href="#/chat">chat</a></li>
+              <li><a ng-hide-auth="" href="#/login">log in</a></li>
+              <li><a ng-show-auth="" href="#/account/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li> 
+
+              <li><a href="#/account/text_views"><i class="fa fa-database"></i> Text Views</a></li>
+
+              <li><a href="#/account/image_views"><i class="fa fa-picture-o"></i><span class="hidden-tablet"> Image Views</span></a></li>
+
+              <!-- <li><a href="ui.html"><i class="fa fa-paperclip"></i><span class="hidden-tablet"> Web View</span></a></li> -->
+
+              <li><a href="#/account/buttons"><i class="fa fa-pencil-square-o"></i><span class="hidden-tablet"> Buttons</span></a></li>
+
+              <!-- <li><a href="login.html"><i class="fa fa-database"></i><span class="hidden-tablet"> Database</span></a></li> -->
+
               <li>
-              <a ng-hide-auth="" href="#/login">log in</a>
-              <a ng-show-auth="" href="#/account">account</a>
-              <a ng-show-auth="" href="#/account/text_views">Text Views</a>
-              <a ng-show-auth="" href="#/account/buttons">Buttons</a>
-              <a ng-show-auth="" href="#/account/image_views">image_views</a>
-              <a ng-show-auth="" href="#/account/web_views">web_views</a>
-            </li>
-
+                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
+                <ul>
+                  <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
+                  <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
+                  <li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                </ul>
+              </li>
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+        <!-- end: Main Menu -->
+        
+        <!-- start: Content -->
+        <div id="content" class="span10">
+          <div class="container">
+            <div ng-view=""></div>
+          </div>
+        </div><!--/#content.span10-->
+         
+      </div><!--/fluid-row-->
+    </div><!-- end: Content -->
+      
 
     <div class="footer">
       <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman</p>
+        <p><span class="glyphicon glyphicon-heart"></span> Copyright</p>
       </div>
     </div>
-
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -78,21 +114,20 @@
        ga('send', 'pageview');
     </script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/firebase/firebase.js"></script>
-    <script src="bower_components/angularfire/dist/angularfire.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/angular/angular.js"></script>
+      <script src="bower_components/firebase/firebase.js"></script>
+      <script src="bower_components/angularfire/dist/angularfire.js"></script>
+      <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+      <script src="bower_components/angular-animate/angular-animate.js"></script>
+      <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+      <script src="bower_components/angular-resource/angular-resource.js"></script>
+      <script src="bower_components/angular-route/angular-route.js"></script>
+      <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+      <script src="bower_components/angular-touch/angular-touch.js"></script>
+      <!-- endbower -->
+
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
@@ -107,7 +142,45 @@
         <script src="scripts/directives/ngShowAuth.js"></script>
         <script src="scripts/directives/ngHideAuth.js"></script>
         <script src="scripts/routes.js"></script>
+        <script src="scripts/controllers/text_views.js"></script>
+        <script src="scripts/controllers/web_views.js"></script>
+        <script src="scripts/controllers/image_views.js"></script>
+        <script src="scripts/controllers/buttons.js"></script>
+        <script src="scripts/controllers/dashboard.js"></script>
+    <!-- endbuild -->
 
-        <!-- endbuild -->
+    <!-- start: JavaScript-->
+    <script src="scripts/js/jquery-1.11.3.min.js"></script>
+    <script src="scripts/js/jquery-migrate-1.0.0.min.js"></script>
+    <script src="scripts/js/jquery-ui-1.10.0.custom.min.js"></script>
+    <script src="scripts/js/jquery.ui.touch-punch.js"></script>
+    <script src="scripts/js/modernizr.js"></script>
+    <script src="scripts/js/bootstrap.min.js"></script>
+    <script src="scripts/js/jquery.cookie.js"></script>
+    <script src='scripts/js/fullcalendar.min.js'></script>
+    <script src='scripts/js/jquery.dataTables.min.js'></script>
+    <script src="scripts/js/excanvas.js"></script>
+    <script src="scripts/js/jquery.flot.js"></script>
+    <script src="scripts/js/jquery.flot.pie.js"></script>
+    <script src="scripts/js/jquery.flot.stack.js"></script>
+    <script src="scripts/js/jquery.flot.resize.min.js"></script>
+    <script src="scripts/js/jquery.chosen.min.js"></script>
+    <script src="scripts/js/jquery.uniform.min.js"></script>
+    <script src="scripts/js/jquery.cleditor.min.js"></script>
+    <script src="scripts/js/jquery.noty.js"></script>
+    <script src="scripts/js/jquery.elfinder.min.js"></script>
+    <script src="scripts/js/jquery.raty.min.js"></script>
+    <script src="scripts/js/jquery.iphone.toggle.js"></script>
+    <script src="scripts/js/jquery.uploadify-3.1.min.js"></script>
+    <script src="scripts/js/jquery.gritter.min.js"></script>
+    <script src="scripts/js/jquery.imagesloaded.js"></script>
+    <script src="scripts/js/jquery.masonry.min.js"></script>
+    <script src="scripts/js/jquery.knob.modified.js"></script>
+    <script src="scripts/js/jquery.sparkline.min.js"></script>
+    <script src="scripts/js/counter.js"></script>
+    <script src="scripts/js/retina.js"></script>
+    <script src="scripts/js/custom.js"></script>
+  <!-- end: JavaScript-->
+
 </body>
 </html>
