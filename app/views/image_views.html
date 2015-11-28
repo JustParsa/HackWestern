@@ -1,0 +1,34 @@
+<div>asdf</div>
+
+
+
+<div>Image View Name<input type="text"
+ng-model="current_text_view.imgViewName"
+size="40"/></div>
+
+<div>Page Url<input type="text"
+ng-model="current_text_view.img_url"
+size="40"/></div>
+
+<div>Width<input type="text"
+ng-model="current_text_view.width"
+size="40"/></div>
+
+<div>Height<input type="text"
+           id="rootFolder"
+           ng-model="current_text_view.height"
+           size="40"/></div>
+
+<div>Color<input type="text"
+ng-model="current_text_view.color"
+size="40"/></div>
+
+
+
+{{current_text_view}}
+
+{{text_views}}
+
+{{textViewName}}
+
+<button ng-click="save_item(current_text_view)">Save</button>
