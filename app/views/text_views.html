@@ -4,10 +4,20 @@
            id="rootFolder"
            ng-model="current_text_view.textViewName"
            size="40"/></div>
-<div>font color<input type="text"
+
+<!-- <div>font color<input type="text"
            id="rootFolder"
            ng-model="current_text_view.font_color"
-           size="40"/></div>
+           size="40"/></div> -->
+
+<div class="form-group">
+  <label for="wheel-demo">font color</label>
+  <input type="text"
+  id="font-color"
+  class="form-control demo"
+  data-control="wheel" value="#000000" 
+  ng-model="current_text_view.font_color">
+</div>
 
 <div>font size<input type="text"
 ng-model="current_text_view.font_size"
@@ -19,10 +29,11 @@ size="40"/></div>
 
 <div class="form-group">
   <label for="wheel-demo">color</label>
-  <input type="text" id="wheel-demo" 
+  <input type="text"
+  id="color"
   class="form-control demo" 
   data-control="wheel" value="#ff99ee" 
-  ng-model="current_text_view.colorpick">
+  ng-model="current_text_view.color">
 </div>
 
 <!-- {{current_text_view}} -->

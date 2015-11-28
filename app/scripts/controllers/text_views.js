@@ -12,8 +12,10 @@ angular.module('dynamoUiApp')
     $scope.save_item = function(text_view) {
       myFirebaseRef.child($scope.current_text_view.textViewName).set(text_view);
     }
-    $scope.colorChange = function(hex) {
-	    myFirebaseRef.child($scope.current_text_view.textViewName).set({'hex':hex});
+    $scope.colorChange = function(id, hex) {
+    	var foo = {};
+    	foo[id]=hex;
+	    myFirebaseRef.child($scope.current_text_view.textViewName).update(foo);
     }
 
     // color picker
@@ -27,8 +29,8 @@ angular.module('dynamoUiApp')
 	        if(!hex) return;
 	        if(opacity) hex += ', ' + opacity;
 	        try {
-	          // myFirebaseRef.child($scope.current_text_view.textViewName).set({'hex':hex});
-	          $scope.colorChange(hex);
+	          $scope.colorChange($(this).attr('id'), hex);
+	          // console.log($(this).attr('id'));
 	          console.log(hex);
 	        } catch(e) {}
 	        $(this).select();
