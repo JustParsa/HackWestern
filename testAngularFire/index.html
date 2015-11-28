@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html ng-app="AngularFire">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Test Your Knowledge: Saturn</title>
+		<link rel="stylesheet" type="text/css" href="css/quiz.css">
+		<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+		<script type="text/javascript" src='js/jquery-1.11.3.min.js'></script>
+	</head>
+	<body>
+
+		<div id="myQuiz" ng-controller="appController">
+			
+			<h2>Welcome</h2>
+			<p>click begin to test your knowledge of Saturn.</p>
+  		<input type ="text" id = "appName" placeholder='App Name' ng-model="appName">
+    	<div>
+    		<div ng-repeat="item in items">
+	        <input type="text" placeholder="{{item.idPlaceholder}}" ng-model="item.id">
+	        <input type="text" placeholder="{{item.attrPlaceholder}}" ng-model="item.attr">
+      	</div>
+      	<button ng-click="add()">New Item</button>
+			</div>
+      <button ng-click="updateAppInfo()">update App Info</button>
+		</div>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/quiz.js"></script>
+	</body>
+</html>
