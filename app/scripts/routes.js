@@ -74,19 +74,19 @@ angular.module('dynamoUiApp')
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
-      .whenAuthenticated('/account/text_views', {
+      .whenAuthenticated('/account/:appId/text_views', {
         templateUrl: 'views/text_views.html',
         controller: 'TextViewsCtrl'
       })
-      .whenAuthenticated('/account/image_views', {
+      .whenAuthenticated('/account/:appId/image_views', {
         templateUrl: 'views/image_views.html',
         controller: 'ImageViewsCtrl'
       })
-      .whenAuthenticated('/account/web_views', {
+      .whenAuthenticated('/account/:appId/web_views', {
         templateUrl: 'views/web_views.html',
         controller: 'WebViewsCtrl'
       })
-      .whenAuthenticated('/account/buttons', {
+      .whenAuthenticated('/account/:appId/buttons', {
         templateUrl: 'views/buttons.html',
         controller: 'ButtonsCtrl'
       })
