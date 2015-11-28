@@ -1,0 +1,32 @@
+{
+  "App Name": {
+    "text_views": {
+      "TEXT_VIEW_NAME": {
+        "font_color": "#AARRGGBB OR #RRGGBB (string)",
+        "font_size": "# (float)",
+        "color": "#AARRGGBB OR #RRGGBB (string)",
+        "text": "text (string)"
+      }
+    },
+    "buttons": {
+      "font_color": "#AARRGGBB OR #RRGGBB (string)",
+      "font_size": "# (float)",
+      "color": "#AARRGGBB OR #RRGGBB (string)",
+      "text": "text (string)",
+      "width": "# int",
+      "height": "# int"
+    },
+    "image_views": {
+      "img_url": "http://endpoint",
+      "width": "# int",
+      "height": "# int",
+      "color": "#AARRGGBB OR #RRGGBB (string)"
+    },
+    "web_views": {
+      "page_url": "http://endpoint",
+      "width": "# int",
+      "height": "# int",
+      "color": "#AARRGGBB OR #RRGGBB (string)"
+    }
+  }
+}
