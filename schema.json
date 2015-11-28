@@ -1,5 +1,6 @@
 {
   "App Name": {
+    "theme": "THEME_NAME",
     "text_views": {
       "TEXT_VIEW_NAME": {
         "font_color": "#AARRGGBB OR #RRGGBB (string)",
