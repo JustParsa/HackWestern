@@ -1,78 +1,60 @@
-(function(){
-	var app = angular.module('AngularFire', []);
-	var myFirebaseRef = new Firebase("https://hackwestern.firebaseio.com/");
-	// $('#messageInput').keypress(function (e) {
- //    if (e.keyCode == 13) {
- //      var name = $('#nameInput').val();
- //      var text = $('#messageInput').val();
- //      // myFirebaseRef.set('User ' + name + ' says ' + text);
- //      var obj = {abc: "helo"}
- //      myFirebaseRef.set(obj);
- //      $('#messageInput').val('');
- //    }
- //  });
-	app.controller('appController', ['$scope','$http','$sce', function($scope, $http, $sce){
-		$scope.items = [];
-    $scope.add = function () {
-      $scope.items.push({ 
-        id: "",
-        idPlaceholder: "id",
-        attr: "",
-        attrPlaceholder: "attr",
-      });
-    } // add function
+<!-- <div>{{app_name}}</div> -->
+<div class="well">
+<div class="container">
+<div class="row-fluid">
+	<div class="col-sm-4 col-md-4 col-lg-4 span6" >
+		<input type="text"
+			id="rootFolder"
+			ng-model="current_text_view.textViewName"
+			size="40"/>
+	</div>
 
-    $scope.updateAppInfo = function(){
-			var appInfo = {};
-			appInfo[$scope.appName] = {};
-			for (var ind in $scope.items){
-				var obj = $scope.items[ind];
-				console.log(obj);
-				appInfo[$scope.appName][obj.id] = obj.attr;
-			}
-			// appInfo[$scope.appName].push($scope.items);
-			// var appInfo = {$scope.appName: true}
-			myFirebaseRef.set(appInfo);
-		}
-		// $http.get('quiz_data.json')
-		// 		.then(function(quizData){
-		// 			$scope.myQuestions = quizData.data;
-		// 			$scope.totalQuestions = $scope.myQuestions.length;
-		// 		});
+	<div class="col-md-6 span6">
+		<button ng-click="save_item(current_text_view)" class="btn btn-default">Save</button>
+	</div>
+</div>
 
-		// $scope.selectAnswer = function(qIndex, aIndex){
-		// 	// console.log(qIndex + ' ' + aIndex);
-		// 	var questionState = $scope.myQuestions[qIndex].questionState;
-		// 	if(questionState != 'answered'){
-		// 		$scope.myQuestions[qIndex].selectedAnswer=aIndex;
-		// 		var correctAnswer = $scope.myQuestions[qIndex].correct;
-		// 		$scope.myQuestions[qIndex].correctAnswer = correctAnswer;
+<div class="row" >
+<div>
 
-		// 		if (aIndex === correctAnswer) {
-		// 			$scope.myQuestions[qIndex].correctness = 'correct';
-		// 			$scope.score += 1;
-		// 		}
-		// 		else{
-		// 			$scope.myQuestions[qIndex].correctness = 'incorrect';
-		// 		}
-		// 		$scope.myQuestions[qIndex].questionState = 'answered';
-		// 	}
 
-		// 	$scope.percentage = (($scope.score / $scope.totalQuestions)*100).toFixed(2);
-		// }
+  <form>
+    <div class="form-group span6">
+      <label for="exampleInputEmail1">Font Size</label>
+      <input type="text" class="form-control " id="exampleInputEmail1" placeholder="eg. 20" ng-model="current_text_view.text" size="40">
+    </div>
+    <div class="form-group span6">
+      <label for="exampleInputPassword1">Text</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your text" ng-model="current_text_view.text" size="40">
+    </div>
 
-		// $scope.isSelected = function(qIndex, aIndex){
-		// 	return $scope.myQuestions[qIndex].selectedAnswer === aIndex;
-		// }
 
-		// $scope.isCorrect = function(qIndex, aIndex){
-		// 	return $scope.myQuestions[qIndex].correctAnswer === aIndex;
-		// }
+  </form>
+	  <!-- <div class="col-md-1"></div> -->
 
-		// $scope.selectContinue = function(){
-		// 	return $scope.activeQuestion += 1;
-		// }
+	  <div class="col-md-6">
+		  <div class="form-group span6">
+			  <label for="wheel-demo">font color</label>
+			  <input type="text"
+			  id="font-color"
+			  class="form-control demo"
+			  data-control="wheel" value="#000000"
+			  ng-model="current_text_view.font_color">
+			</div>
 
-	}]);//end controller
+		  <div class="form-group span6">
 
-})();
+			  <label for="wheel-demo">color</label>
+			  <input type="text"
+			  id="color"
+			  class="form-control demo"
+			  data-control="wheel" value="#ff99ee"
+			  ng-model="current_text_view.color">
+			</div>
+	  </div>
+	</div>
+</div>
+</div>
+<!-- end well-->
+</div>
+<!-- {{current_text_view}} -->

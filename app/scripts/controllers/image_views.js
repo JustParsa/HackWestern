@@ -56,6 +56,7 @@ angular.module('dynamoUiApp')
             };
             console.log(obj);
             myFirebaseRef.update(obj);
+            $scope.image_views = [];
         }
     }
 
