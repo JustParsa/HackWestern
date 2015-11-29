@@ -3,7 +3,7 @@
 angular.module('dynamoUiApp')
   .controller('ImageViewsCtrl', function ($scope, $routeParams) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
-    $routeParams['appId'] = "YOLOAPP"
+    // $routeParams['appId'] = "YOLOAPP"
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("image_views");
     $scope.current_text_view = {};
     $scope.image_views = [];
