@@ -8,7 +8,12 @@
 body {
   padding: 0;
 }
+.fix-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px; 
 
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -84,3 +89,4 @@ body {
     border-bottom: 0;
   }
 }
+

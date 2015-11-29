@@ -5,9 +5,9 @@
 
 <div ng-repeat="text_view in text_views">
 
-	<div class="row-fluid" style="margin-top: 30px">
+	<div class="row-fluid">
 	<div class="span6" >
-		<span style="font-weight: bold;font-size: 18px;">UI element</span>
+		UI element
 		<input type="text"
 			id="rootFolder"
 			ng-model="text_view.ui_name"
@@ -15,9 +15,9 @@
 			size="40"/>
 	</div>
 
-<!-- 	<div class="span6">
+	<div class="span6">
 		<button ng-click="save_item(text_view.ui_name)" class="btn btn-default">Save</button>
-	</div> -->
+	</div>
 	</div>
 
 	<div class="row-fluid" ng-hide="hideIfBlank(text_view.ui_name)">
@@ -27,40 +27,17 @@
     <div class="form-group span6">
       <label for="font size">Font Size</label>
       <input type="text" class="form-control "
-       placeholder="{{text_view.font_size_placeholder}}" 
-       value="{{text_view.font_size_placeholder}}" 
-       ng-model="text_view.font_size" size="40">
+       placeholder="{{item.font_size_placeholder}}" ng-model="item.font_size" size="40">
     </div>
 
     <div class="form-group span6">
       <label for="Text">Text</label>
-      <input type="text" class="form-control" 
-      	placeholder="{{text_view.text_placeholder}}" 
-				value="{{text_view.text_placeholder}}" 
-      	ng-model="text_view.text" size="40">
+      <input type="text" class="form-control" id="Text" 
+      	placeholder="{{item.text_placeholder}}" ng-model="item.text" size="40">
     </div>
   </div>
 	
 	<div class="row-fluid" >
-		  <div class="form-group span6">
-			  <label for="font size">font color</label>
-      	<input type="text" class="form-control "
-       placeholder="{{text_view.font_color_placeholder}}" 
-       value="{{text_view.font_color_placeholder}}" 
-       ng-model="text_view.font_color" 
-       size="40">
-			</div>
-
-		  <div class="form-group span6">
-			  <label for="font size">color</label>
-      	<input type="text" class="form-control "
-       placeholder="{{text_view.color_placeholder}}" ng-model="text_view.color"
-       value="{{text_view.color_placeholder}}" 
-       size="40">
-			</div>
-	</div>
-
-<!-- 	<div class="row-fluid" >
 		  <div class="form-group span6">
 			  <label for="wheel-demo">font color</label>
 			  <input type="text"
@@ -78,19 +55,17 @@
 			  data-control="wheel" value="#ff99ee"
 			  ng-model="text_view.color">
 			</div>
-	</div> -->
+	</div>
 	</div>
 
 	<div class="span1" style="position:relative; padding-top:55px;padding-left:20px;">
-	<button type="button" class="btn btn-success" ng-click="save_item(text_view)">Submit</button>
+	<button type="button" class="btn btn-success" ng-click="submit()">Submit</button>
 	</div>
 	
 	</div>
 </div>
-
 <!-- ng item -->
 </div>
-
 <div>
 <button type="button" class="btn btn-success" ng-click="add()">Add UI</button>
 </div>
