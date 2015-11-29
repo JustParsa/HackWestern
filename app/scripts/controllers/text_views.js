@@ -10,6 +10,18 @@ angular.module('dynamoUiApp')
     $scope.current_text_view = {};
     $scope.text_views = {};
 
+    $scope.existing_text_views = [];
+
+    myFirebaseRef.on('value', function(snap) {
+        var data = snap.val();
+        $scope.existing_text_views = Object.keys(data).map((key) => {
+            var obj = data[key];
+            obj._key = key;
+            return obj;
+        });
+        $scope.$apply();
+    });
+
     $scope.save_item = function(text_view) {
       myFirebaseRef.child($scope.current_text_view.textViewName).set(text_view);
     }
