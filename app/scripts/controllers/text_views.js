@@ -3,7 +3,6 @@
 angular.module('dynamoUiApp')
   .controller('TextViewsCtrl', function ($scope, $routeParams) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
-    $routeParams['appId'] = "testUI"
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("text_views");
 
     $scope.items = [];
@@ -11,7 +10,7 @@ angular.module('dynamoUiApp')
     // $scope.app_name = $routeParams['appId'];
 
     $scope.add = function () {
-      $scope.text_views.push({ 
+      $scope.text_views.push({
       	ui_name: "",
         ui_name_placeholder: "enter name",
         font_size: "",
@@ -29,7 +28,7 @@ angular.module('dynamoUiApp')
      // console.log(ui_name.length)
      if (ui_name.length == 0)
       return true;
-    else 
+    else
       return false;
     }
 
