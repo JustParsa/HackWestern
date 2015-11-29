@@ -2,8 +2,9 @@
 <!-- <div ng-repeat="item in items"> -->
 <div class="well" >
 	<div class="container">
-
-		Existing Text Views
+		<div style="font-weight: bold;font-size: 18px;">
+			Existing Text Views
+		</div>
 		<div class = "row-fluid" ng-repeat="tv in existing_text_views">
 			<div class="col-sm-4 col-md-4 col-lg-4">
 				<input type="text"
@@ -16,7 +17,7 @@
 				size="40" />
 			</div>
 		</div>
-
+		<!-- end row -->
 		<br>
 
 		<div ng-repeat="text_view in text_views">
@@ -31,10 +32,6 @@
 					placeholder="{{text_view.ui_name_placeholder}}"
 					size="40"/>
 				</div>
-
-<!-- 	<div class="span6">
-		<button ng-click="save_item(text_view.ui_name)" class="btn btn-default">Save</button>
-	</div> -->
 			</div>
 			<!-- end ui name row -->
 
@@ -105,7 +102,7 @@
 	  <!-- <div class="col-md-1"></div> -->
 
 	  <div class="span1" style="position:relative; padding-top:55px;padding-left:20px;">
-	  	<button type="button" class="btn btn-success" ng-click="save_item(text_view)">Submit</button>
+	  	<button type="button" class="btn btn-primary" ng-click="save_item(text_view)">Submit</button>
 	  </div>
 	</div>
 </div>
