@@ -8,6 +8,6 @@ angular.module('dynamoUiApp')
     $scope.current_text_view = {};
     $scope.save_item = function(text_view) {
       myFirebaseRef.child($scope.current_text_view.buttonName).set(text_view);
-      myOriginalFirebaseRef.child($routeParams['appId']).set($scope.themeObj);
+      myOriginalFirebaseRef.child($routeParams['appId']).child("theme").set($scope.themeObj.theme);
     };
 });
