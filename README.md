@@ -1,6 +1,7 @@
 # Dynamo-UI
 
-![fblogo](https://cloud.githubusercontent.com/assets/8930332/11457300/20cb0e42-9673-11e5-928b-890191601a3b.png)
+![untitled-2](https://cloud.githubusercontent.com/assets/8930332/11457535/61e9bec2-9679-11e5-8bfe-7cdbdad20faf.png)
+
 
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
