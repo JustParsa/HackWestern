@@ -4,8 +4,6 @@ angular.module('dynamoUiApp')
   .controller('TextViewsCtrl', function ($scope, $routeParams) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("text_views");
-
-    $scope.items = [];
     $scope.text_views = [];
     // $scope.app_name = $routeParams['appId'];
 
@@ -21,6 +19,10 @@ angular.module('dynamoUiApp')
         color_placeholder: "#ff99ee",
         font_color:"",
         font_color_placeholder: "#000000",
+        height: "",
+        height_placeholder: "height",
+        width:"",
+        width_placeholder: "width",
       });
     } // add function
 
@@ -56,6 +58,8 @@ angular.module('dynamoUiApp')
                     text: tv.text,
                     color:tv.color,
                     font_color:tv.font_color,
+                    width: text_view.width,
+                    height: text_view.height
                     };
                     myFirebaseRef.update(obj);
                     $scope.text_views = [];
