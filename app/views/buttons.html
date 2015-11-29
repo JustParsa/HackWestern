@@ -1,4 +1,66 @@
 
+<div style="font-weight: bold;font-size: 18px;margin-bottom: 20px;">
+  Existing Text Views
+</div>
+
+<table>
+    <th>
+        <td style="color: black; font-weight: bold;">Name</td>
+        <td style="color: black; font-weight: bold;">Text</td>
+        <td style="color: black; font-weight: bold;">Color</td>
+        <td style="color: black; font-weight: bold;">Font Size</td>
+        <td style="color: black; font-weight: bold;">Font Color</td>
+        <td style="color: black; font-weight: bold;">Height</td>
+        <td style="color: black; font-weight: bold;">Width</td>
+    </th>
+    <tr class = "row-fluid" ng-repeat="button in existing_buttons">
+        <td>
+            <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.buttonName"
+               size="40"/>
+        </td>
+        <td>
+            <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.text"
+               size="40" />
+        </td>
+        <td>
+        <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.color"
+               size="40" />
+        </td>
+        <td>
+        <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.font_size"
+               size="40" />
+        </td>
+        <td>
+        <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.font_color"
+               size="40" />
+        </td>
+        <td>
+        <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.height"
+               size="40" />
+        </td>
+        <td>
+            <input style="width: 90px" type="text"
+               id="rootFolder"
+               ng-model="button.width"
+               size="40" />
+        </td>
+
+    </tr>
+
+</table>
+<br>
 
 
 <div>Button Name<input type="text"

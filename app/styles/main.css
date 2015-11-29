@@ -12,6 +12,10 @@
 body {
   padding: 0;
 }
+.fix-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 
 .set-color-dark {
   color: #497494 !important;
@@ -92,3 +96,4 @@ body {
     border-bottom: 0;
   }
 }
+
