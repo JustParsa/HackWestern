@@ -1,6 +1,10 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+  <h1 class="alert alert-info" style="font-size: 30px">Your current <strong>Applications</strong></h1>
 	<div ng-repeat="app in apps">
-		<button ng-click="setAppId(app)" class="btn btn-primary">{{app}}</button>
+<ul class="nav nav-tabs nav-stacked main-menu">
+
+		<li><a href ng-click="setAppId(app)"><i style="font-size: 30px;" class="fa fa-database left-pad set-color-dark" ></i><span style="font-size: 20px" class="hidden-tablet set-color-dark"> {{app}}</span></a></li>
+</ul>
+
 	</div>
 </div><!--/#content.span10-->
