@@ -33,11 +33,24 @@ angular.module('dynamoUiApp')
       return false;
     }
 
+    $scope.existing_text_views = [];
+
+    myFirebaseRef.on('value', function(snap) {
+        var data = snap.val();
+        $scope.existing_text_views = Object.keys(data).map((key) => {
+            var obj = data[key];
+            obj._key = key;
+            return obj;
+        });
+        $scope.$apply();
+    });
+
     $scope.save_item = function(text_view) {
     	if (text_view.ui_name.length != 0){
     		var str = text_view.ui_name;
     		var obj = {}
     		obj[text_view.ui_name] = {
+    			ui_name: text_view.ui_name,
 	        font_size: text_view.font_size,
 	        text: text_view.text,
 	        color:text_view.color,

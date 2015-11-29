@@ -1,34 +1,39 @@
-<div>asdf</div>
+Existing Web Views
+<div class = "row-fluid" ng-repeat="tv in existing_web_views">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <input type="text"
+               id="rootFolder"
+               ng-model="tv.webViewName"
+               size="40"/>
+        <input type="text"
+               id="rootFolder"
+               ng-model="tv.page_url"
+               size="40" />
+    </div>
+</div>
 
-
+<br>
 
 <div>Web View Name<input type="text"
-ng-model="current_text_view.webViewName"
-size="40"/></div>
+                         ng-model="current_text_view.webViewName"
+                         size="40"/></div>
 
 <div>Page Url<input type="text"
-ng-model="current_text_view.page_url"
-size="40"/></div>
+                    ng-model="current_text_view.page_url"
+                    size="40"/></div>
 
 <div>Width<input type="text"
-ng-model="current_text_view.width"
-size="40"/></div>
+                 ng-model="current_text_view.width"
+                 size="40"/></div>
 
 <div>Height<input type="text"
-           id="rootFolder"
-           ng-model="current_text_view.height"
-           size="40"/></div>
+                  id="rootFolder"
+                  ng-model="current_text_view.height"
+                  size="40"/></div>
 
 <div>Color<input type="text"
-ng-model="current_text_view.color"
-size="40"/></div>
+                 ng-model="current_text_view.color"
+                 size="40"/></div>
 
-
-
-{{current_text_view}}
-
-{{text_views}}
-
-{{textViewName}}
 
 <button ng-click="save_item(current_text_view)">Save</button>

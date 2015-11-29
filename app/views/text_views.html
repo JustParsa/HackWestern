@@ -3,9 +3,26 @@
 <div class="well" >
 <div class="container">
 
+    Existing Text Views
+    <div class = "row-fluid" ng-repeat="tv in existing_text_views">
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <input type="text"
+                id="rootFolder"
+                ng-model="tv.ui_name"
+                size="40"/>
+            <input type="text"
+                   id="rootFolder"
+                   ng-model="tv.text"
+                   size="40" />
+        </div>
+    </div>
+
+    <br>
+
 <div ng-repeat="text_view in text_views">
 
 	<div class="row-fluid" style="margin-top: 30px">
+    
 	<div class="span6" >
 		<span style="font-weight: bold;font-size: 18px;">UI element</span>
 		<input type="text"

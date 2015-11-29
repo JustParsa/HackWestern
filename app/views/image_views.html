@@ -1,4 +1,18 @@
-<div>asdf</div>
+Existing Image Views
+<div class = "row-fluid" ng-repeat="tv in existing_image_views">
+    <div class="col-sm-4 col-md-4 col-lg-4">
+        <input type="text"
+               id="rootFolder"
+               ng-model="tv.imgViewName"
+               size="40"/>
+        <input type="text"
+               id="rootFolder"
+               ng-model="tv.img_url"
+               size="40" />
+    </div>
+</div>
+
+<br>
 
 
 
@@ -22,13 +36,5 @@ size="40"/></div>
 <div>Color<input type="text"
 ng-model="current_text_view.color"
 size="40"/></div>
-
-
-
-{{current_text_view}}
-
-{{text_views}}
-
-{{textViewName}}
 
 <button ng-click="save_item(current_text_view)">Save</button>
