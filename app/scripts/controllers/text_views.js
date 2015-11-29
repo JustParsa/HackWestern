@@ -45,20 +45,23 @@ angular.module('dynamoUiApp')
     });
 
     $scope.save_item = function(text_view) {
-    	if (text_view.ui_name.length != 0){
-    		var str = text_view.ui_name;
-    		var obj = {}
-    		obj[text_view.ui_name] = {
-    			ui_name: text_view.ui_name,
-	        font_size: text_view.font_size,
-	        text: text_view.text,
-	        color:text_view.color,
-	        font_color:text_view.font_color,
-    		};
-    		console.log(obj);
-      	myFirebaseRef.update(obj);
-      	$scope.text_views = [];
-    	}
+        if($scope.existing_text_views.length != 0) {
+            $scope.existing_text_views.forEach(function(tv) {
+                if (tv.ui_name != null && tv.ui_name.length != 0){
+                    var str = tv.ui_name;
+                    var obj = {}
+                    obj[tv.ui_name] = {
+                        ui_name: tv.ui_name,
+                    font_size: tv.font_size,
+                    text: tv.text,
+                    color:tv.color,
+                    font_color:tv.font_color,
+                    };
+                    myFirebaseRef.update(obj);
+                    $scope.text_views = [];
+                }
+            });
+        }
     }
 
     $scope.colorChange = function(id, hex) {
