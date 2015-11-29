@@ -22,15 +22,15 @@ angular.module('dynamoUiApp')
 
     $scope.add = function () {
       $scope.image_views.push({ 
-        imgViewName: "",
+        imgViewName: null,
         imgViewName_placeholder: "enter name",
-        img_url: "",
+        img_url: null,
         img_url_placeholder: "url",
-        height: "",
+        height: null,
         height_placeholder: "height",
-        width:"",
+        width: null,
         width_placeholder: "width",
-        color:"",
+        color: null,
         color_placeholder: "#ff99ee",
       });
     } // add function
