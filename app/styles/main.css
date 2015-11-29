@@ -5,6 +5,10 @@
   padding: 0.2em 0;
 }
 
+.left-pad {
+  padding-left: 20px;
+}
+
 body {
   padding: 0;
 }
@@ -51,7 +55,7 @@ body {
   padding: 14px 24px;
 }
 .sidebar-left {
-  min-height: 650px;
+  height: 100% !important;
 
 }
 /* Supporting marketing content */
