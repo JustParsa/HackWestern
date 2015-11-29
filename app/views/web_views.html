@@ -1,16 +1,25 @@
 Existing Web Views
-<div class = "row-fluid" ng-repeat="tv in existing_web_views">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <input type="text"
-               id="rootFolder"
-               ng-model="tv.webViewName"
-               size="40"/>
-        <input type="text"
-               id="rootFolder"
-               ng-model="tv.page_url"
-               size="40" />
-    </div>
-</div>
+<table>
+    <th>
+        <td style="color: black; font-weight: bold;">Web View</td>
+        <td style="color: black; font-weight: bold;">Page URL</td>
+    </th>
+    <tr class = "row-fluid" ng-repeat="wv in existing_web_views">
+        <td>
+            <input style="width: 90px" type="text"
+                                       id="rootFolder"
+                                       ng-model="wv.webViewName"
+                                       size="40"/>
+        </td>
+        <td>
+            <input style="width: 90px" type="text"
+                                       id="rootFolder"
+                                       ng-model="wv.page_url"
+                                       size="40" />
+        </td>
+    </tr>
+
+</table>
 
 <br>
 
