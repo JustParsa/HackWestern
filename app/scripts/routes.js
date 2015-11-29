@@ -61,7 +61,6 @@ angular.module('dynamoUiApp')
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-
       .when('/chat', {
         templateUrl: 'views/chat.html',
         controller: 'ChatCtrl'
@@ -93,6 +92,10 @@ angular.module('dynamoUiApp')
       .whenAuthenticated('/account/:appId/buttons', {
         templateUrl: 'views/buttons.html',
         controller: 'ButtonsCtrl'
+      })
+      .whenAuthenticated('/account/:appId/themes', {
+          templateUrl: 'views/themes.html',
+          controller: 'ThemeCtrl'
       })
       .otherwise({redirectTo: '/'});
   }])

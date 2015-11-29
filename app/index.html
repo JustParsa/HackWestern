@@ -23,7 +23,7 @@
       <div class="navbar" role="navigation">
         <div class="navbar-inner">
           <div class="container-fluid">
-          <a class="brand" href="index.html"><span>Dynamo</span></a>
+              <a class="brand" href="index.html"><span>Dynamo<em><b>UI</b></em></span></a>
 
           <!-- start: Header Menu -->
             <div class="nav-no-collapse header-nav">
@@ -57,7 +57,7 @@
           <div class="nav-collapse sidebar-nav">
             <ul class="nav nav-tabs nav-stacked main-menu">
 
-              <li><a ng-hide-auth="" href="#/login">log in</a></li>
+              <li><a ng-hide-auth="" href="#/login">Log In</a></li>
               <li><a ng-show-auth="" href="#/account/dashboard"><i class="fa fa-tachometer"></i> Dashboard</a></li>
 
               <li><a href="#/account/text_views"><i class="fa fa-database"></i> Text Views</a></li>
@@ -68,14 +68,15 @@
 
               <li><a href="#/account/buttons"><i class="fa fa-pencil-square-o"></i><span class="hidden-tablet"> Buttons</span></a></li>
 
+              <li><a href="#/account/themes"><i class="fa fa-asterisk"></i><span class="hidden-tablet"> Themes</span></a></li>
               <!-- <li><a href="login.html"><i class="fa fa-database"></i><span class="hidden-tablet"> Database</span></a></li> -->
 
               <li>
-                <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Dropdown</span><span class="label label-important"> 3 </span></a>
+                <a class="dropmenu" href="#"><i class="fa fa-bar-chart"></i><span class="hidden-tablet"> A/B Testing</span></a>
                 <ul>
-                  <li><a class="submenu" href="submenu.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 1</span></a></li>
-                  <li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 2</span></a></li>
-                  <li><a class="submenu" href="submenu3.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Menu 3</span></a></li>
+                  <li><a class="submenu" href="submenu.html"><i class="fa fa-pie-graph"></i><span class="hidden-tablet"> Pie Graph</span></a></li>
+                  <li><a class="submenu" href="submenu2.html"><i class="fa fa-line-graph"></i><span class="hidden-tablet"> Line Graph</span></a></li>
+                  <li><a class="submenu" href="submenu3.html"><i class="fa fa-bar-graph"></i><span class="hidden-tablet"> Bar Graph</span></a></li>
                 </ul>
               </li>
             </ul>
@@ -144,6 +145,7 @@
         <script src="scripts/controllers/image_views.js"></script>
         <script src="scripts/controllers/buttons.js"></script>
         <script src="scripts/controllers/dashboard.js"></script>
+        <script src="scripts/controllers/theme.js"></script>
     <!-- endbuild -->
 
     <!-- start: JavaScript-->
