@@ -1,6 +1,6 @@
 <div class="jumbotron">
   <h1>'Allo, 'Allo!</h1>
-	<div ng-repeat="app in apps">	
-		<button class="btn btn-default">{{app}}</button>
-	</div>	
+	<div ng-repeat="app in apps">
+		<button ng-click="setAppId(app)" class="btn btn-primary">{{app}}</button>
+	</div>
 </div><!--/#content.span10-->

@@ -77,6 +77,10 @@ angular.module('dynamoUiApp')
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .whenAuthenticated('/account/dashboard/:appId', {
+        templateUrl: 'views/selectedapp.html',
+        controller: 'SelectedAppCtrl'
+      })
       .whenAuthenticated('/account/:appId/text_views', {
         templateUrl: 'views/text_views.html',
         controller: 'TextViewsCtrl'
