@@ -6,38 +6,46 @@ Existing Image Views
     <th>
         <td style="color: black; font-weight: bold;">Image</td>
         <td style="color: black; font-weight: bold;">Image URL</td>
+        <td style="color: black; font-weight: bold;">Height</td>
+        <td style="color: black; font-weight: bold;">Width</td>
+        <td style="color: black; font-weight: bold;">Color</td>
     </th>
     <tr class = "row-fluid" ng-repeat="img in existing_image_views">
         <td>
-            <input style="width: 90px" type="text"
-                                       id="rootFolder"
-                                       ng-model="img.imgViewName"
-                                       size="40"/>
+            {{ img.imgViewName }}
         </td>
         <td>
-            <input style="width: 90px" type="text"
+            <input style="width: 400px" type="text"
                                        id="rootFolder"
                                        ng-model="img.img_url"
-                                       size="40" />
+                                       ng-blur="existing_image_views.$save(img)"
+                                       size="400" />
         </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="img.height"
+                                       ng-change="existing_image_views.$save(img)"
+                                       size="400" />
+        </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="img.width"
+                                       ng-change="existing_image_views.$save(img)"
+                                       size="400" />
+        </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="img.color"
+                                       ng-change="existing_image_views.$save(img)"
+                                       size="400" />
+        </td>
+
     </tr>
 
 </table>
-
-<br>
-
-<div class = "row-fluid" ng-repeat="tv in existing_image_views">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-        <input type="text"
-               id="rootFolder"
-               ng-model="tv.imgViewName"
-               size="40"/>
-        <input type="text"
-               id="rootFolder"
-               ng-model="tv.img_url"
-               size="40" />
-    </div>
-</div>
 
 <br>
 

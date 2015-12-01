@@ -1,22 +1,13 @@
 'use strict';
 
 angular.module('dynamoUiApp')
-  .controller('ImageViewsCtrl', function ($scope, $routeParams) {
+  .controller('ImageViewsCtrl', function ($scope, $routeParams, $firebaseArray) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
-    // $routeParams['appId'] = "YOLOAPP"
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("image_views");
     $scope.current_text_view = {};
     $scope.image_views = [];
 
-    myFirebaseRef.on("value", function(snapshot) {
-        var data = snapshot.val();
-        $scope.existing_image_views = Object.keys(data).map((key) => {
-            var obj = data[key];
-            obj._key = key;
-            return obj;
-        });
-        $scope.$apply();
-    });
+    $scope.existing_image_views = $firebaseArray(myFirebaseRef);
  
     // $scope.app_name = $routeParams['appId'];
 
@@ -54,7 +45,6 @@ angular.module('dynamoUiApp')
                 width:img_view.width,
                 color:img_view.color,
             };
-            console.log(obj);
             myFirebaseRef.update(obj);
             $scope.image_views = [];
         }

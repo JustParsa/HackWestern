@@ -1,21 +1,12 @@
 'use strict';
 
 angular.module('dynamoUiApp')
-  .controller('ButtonsCtrl', function ($scope, $routeParams) {
+  .controller('ButtonsCtrl', function ($scope, $routeParams, $firebaseArray) {
     var myOriginalFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
     var myFirebaseRef = myOriginalFirebaseRef.child($routeParams['appId']).child("buttons");
     $scope.btn_views = [];
-    $scope.existing_buttons = [];
+    $scope.existing_buttons = $firebaseArray(myFirebaseRef);
 
-    myFirebaseRef.on("value", function(snapshot) {
-        var data = snapshot.val();
-        $scope.existing_buttons = Object.keys(data).map((key) => {
-            var obj = data[key];
-            obj._key = key;
-            return obj;
-        });
-        $scope.$apply();
-    });
 
     $scope.add = function () {
       $scope.btn_views.push({ 
@@ -57,7 +48,6 @@ angular.module('dynamoUiApp')
                 font_size: btn_view.font_size,
                 text: btn_view.text,
             };
-            console.log(obj);
             myFirebaseRef.update(obj);
             $scope.btn_views = [];
         }

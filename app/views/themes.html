@@ -1,11 +1,5 @@
-
-
 <div>Theme<input type="text"
-ng-model="current_theme"
+ng-model="themeObj.theme"
+ng-blur="themeObj.$save()"
 size="40"/></div>
 
-{{themeObj}}
-
-<button ng-click="save_item(themeObj)" class="btn btn-success">Save</button>
-
-<p ng-model="current_theme"></p>

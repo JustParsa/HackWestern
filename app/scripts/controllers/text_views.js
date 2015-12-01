@@ -1,9 +1,12 @@
 'use strict';
 
 angular.module('dynamoUiApp')
-  .controller('TextViewsCtrl', function ($scope, $routeParams) {
+  .controller('TextViewsCtrl', function ($scope, $routeParams, $firebaseObject, $firebaseArray) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("text_views");
+
+    $scope.existing_text_views = $firebaseArray(myFirebaseRef);
+
     $scope.text_views = [];
     // $scope.app_name = $routeParams['appId'];
 
@@ -34,18 +37,6 @@ angular.module('dynamoUiApp')
       return false;
     }
 
-    $scope.existing_text_views = [];
-
-    myFirebaseRef.on('value', function(snap) {
-        var data = snap.val();
-        $scope.existing_text_views = Object.keys(data).map((key) => {
-            var obj = data[key];
-            obj._key = key;
-            return obj;
-        });
-        $scope.$apply();
-    });
-
     $scope.save_item = function(text_view) {
         if (text_view.ui_name.length != 0){
             var str = text_view.ui_name;
@@ -59,7 +50,6 @@ angular.module('dynamoUiApp')
                 font_size: text_view.font_size,
                 text: text_view.text,
             };
-            console.log(obj);
             myFirebaseRef.update(obj);
             $scope.text_views = [];
         }
