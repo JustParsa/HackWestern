@@ -10,7 +10,7 @@ Existing Image Views
         <td style="color: black; font-weight: bold;">Width</td>
         <td style="color: black; font-weight: bold;">Color</td>
     </th>
-    <tr class = "row-fluid" ng-repeat="img in existing_image_views">
+    <tr class = "row-fluid" ng-repeat="img in existing_image_views | orderBy: 'imgViewName'">
         <td>
             {{ img.imgViewName }}
         </td>

@@ -1,10 +1,8 @@
-'use strict';
 
 angular.module('dynamoUiApp')
   .controller('ImageViewsCtrl', function ($scope, $routeParams, $firebaseArray) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("image_views");
-    $scope.current_text_view = {};
     $scope.image_views = [];
 
     $scope.existing_image_views = $firebaseArray(myFirebaseRef);

@@ -5,20 +5,43 @@ Existing Web Views
     <th>
         <td style="color: black; font-weight: bold;">Web View</td>
         <td style="color: black; font-weight: bold;">Page URL</td>
+        <td style="color: black; font-weight: bold;">Height</td>
+        <td style="color: black; font-weight: bold;">Width</td>
+        <td style="color: black; font-weight: bold;">Color</td>
     </th>
-    <tr class = "row-fluid" ng-repeat="wv in existing_web_views">
+    <tr class = "row-fluid" ng-repeat="wv in existing_web_views | orderBy: 'webViewName'">
         <td>
-            <input style="width: 90px" type="text"
-                                       id="rootFolder"
-                                       ng-model="wv.webViewName"
-                                       size="40"/>
+            {{ wv.webViewName }}
         </td>
         <td>
-            <input style="width: 90px" type="text"
+            <input style="width: 400px" type="text"
                                        id="rootFolder"
                                        ng-model="wv.page_url"
-                                       size="40" />
+                                       ng-blur="existing_web_views.$save(wv)"
+                                       size="400" />
         </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="wv.height"
+                                       ng-change="existing_web_views.$save(wv)"
+                                       size="400" />
+        </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="wv.width"
+                                       ng-change="existing_web_views.$save(wv)"
+                                       size="400" />
+        </td>
+        <td>
+            <input style="width: 60px" type="text"
+                                       id="rootFolder"
+                                       ng-model="wv.color"
+                                       ng-change="existing_web_views.$save(wv)"
+                                       size="400" />
+        </td>
+
     </tr>
 
 </table>
@@ -48,7 +71,7 @@ Existing Web Views
         <input type="text" class="form-control" 
         placeholder="{{web_view.page_url_placeholder}}" 
         value="{{web_view.page_url_placeholder}}" 
-        ng-model="web_view.page_url" size="40">
+        ng-model="web_view.page_url" size="400">
       </div>
 
       <div class="form-group span6">
