@@ -1,0 +1,186 @@
+<!-- <div>{{app_name}}</div> -->
+<!-- <div ng-repeat="item in items"> -->
+<div class="well" >
+    <div class="container">
+
+        <div style="font-weight: bold;font-size: 18px;margin-bottom: 20px;">
+            Existing Edit Text Views
+        </div>
+
+        <table>
+            <th>
+                <td style="color: black; font-weight: bold;">Name</td>
+                <td style="color: black; font-weight: bold;">Text</td>
+                <td style="color: black; font-weight: bold;">Color</td>
+                <td style="color: black; font-weight: bold;">Font Size</td>
+                <td style="color: black; font-weight: bold;">Font Color</td>
+                <td style="color: black; font-weight: bold;">Height</td>
+                <td style="color: black; font-weight: bold;">Width</td>
+                <td style="color: black; font-weight: bold;">Input Place Holder</td>
+            </th>
+            <tr class = "row-fluid" ng-repeat="et in existing_edit_text_views | orderBy: 'ui_name'">
+                <td>
+                    {{et.ui_name}}
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.text"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.color"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.font_size"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.font_color"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.height"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.width"
+                    size="40" />
+                </td>
+                <td>
+                    <input style="width: 90px" type="text"
+                    id="rootFolder"
+                    ng-change="existing_edit_text_views.$save(et)"
+                    ng-model="et.input_placeholder"
+                    size="100" />
+                </td>
+
+            </tr>
+
+        </table>
+        <br>
+
+        <div ng-repeat="text_view in edit_text_views">
+
+            <div class="row-fluid" style="margin-top: 30px">
+
+                <div class="span6" >
+                    <span style="font-weight: bold;font-size: 18px;">UI element</span>
+                    <input type="text"
+                    id="rootFolder"
+                    ng-model="text_view.ui_name"
+                    placeholder="{{text_view.ui_name_placeholder}}"
+                    size="40"/>
+                </div>
+            </div>
+            <!-- end ui name row -->
+
+            <div class="row-fluid" ng-hide="hideIfBlank(text_view.ui_name)">
+                <div class="span8" >
+                    <div class="row-fluid" >
+                        <div class="form-group span6">
+                            <label for="font size">Font Size</label>
+                            <input type="text" class="form-control "
+                            placeholder="{{text_view.font_size_placeholder}}" 
+                            value="{{text_view.font_size_placeholder}}" 
+                            ng-model="text_view.font_size" size="40">
+                        </div>
+
+                        <div class="form-group span6">
+                            <label for="Text">Text</label>
+                            <input type="text" class="form-control" 
+                            placeholder="{{text_view.text_placeholder}}" 
+                            value="{{text_view.text_placeholder}}" 
+                            ng-model="text_view.text" size="40">
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid" >
+                        <div class="form-group span6">
+                            <label for="font size">font color</label>
+                            <input type="text" class="form-control "
+                            placeholder="{{text_view.font_color_placeholder}}" 
+                            value="{{text_view.font_color_placeholder}}" 
+                            ng-model="text_view.font_color" 
+                            size="40">
+                        </div>
+
+                        <div class="form-group span6">
+                            <label for="font size">color</label>
+                            <input type="text" class="form-control "
+                            placeholder="{{text_view.color_placeholder}}" 
+                            ng-model="text_view.color"
+                            value="{{text_view.color_placeholder}}" 
+                            size="40">
+                        </div>
+                    </div>
+
+                    <div class="row-fluid" >
+                        <div class="form-group span6">
+                            <label for="Text">Height</label>
+                            <input type="text" class="form-control" 
+                            placeholder="{{text_view.height_placeholder}}" 
+                            value="{{text_view.height_placeholder}}" 
+                            ng-model="text_view.height" size="40">
+                        </div>
+
+                        <div class="form-group span6">
+                            <label for="Text">Width</label>
+                            <input type="text" class="form-control" 
+                            placeholder="{{text_view.width_placeholder}}" 
+                            value="{{text_view.width_placeholder}}" 
+                            ng-model="text_view.width" size="40">
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid" >
+                        <div class="form-group span6">
+                            <label for="Text">Input Placeholder</label>
+                            <input type="text" class="form-control" 
+                            placeholder="{{text_view.input_placeholder_placeholder}}" 
+                            value="{{text_view.input_placeholder_placeholder}}" 
+                            ng-model="text_view.input_placeholder" size="40">
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+            <div class="span4" style="position:relative; padding-top:55px;padding-left:20px;">
+                <button type="button" class="btn btn-primary" ng-click="save_item(text_view)">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ng item -->
+</div>
+
+<div>
+    <button type="button" class="btn btn-success" ng-click="add()"style="position:relative; margin-top:40px;">
+        Add UI</button>
+</div>
+
+</div>
+<!-- end well-->
+

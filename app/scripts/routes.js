@@ -101,6 +101,10 @@ angular.module('dynamoUiApp')
           templateUrl: 'views/themes.html',
           controller: 'ThemeCtrl'
       })
+      .whenAuthenticated('/account/:appId/edit_texts', {
+          templateUrl: 'views/edit_texts.html',
+          controller: 'EditTextsCtrl'
+      })
       .otherwise({redirectTo: '/'});
   }])
 

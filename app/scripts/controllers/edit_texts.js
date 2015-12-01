@@ -1,16 +1,11 @@
-
 angular.module('dynamoUiApp')
-  .controller('TextViewsCtrl', function ($scope, $routeParams, $firebaseObject, $firebaseArray) {
+  .controller('EditTextsCtrl', function ($scope, $routeParams, $firebaseObject, $firebaseArray) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
-    myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("text_views");
-
-    $scope.existing_text_views = $firebaseArray(myFirebaseRef);
-
-    $scope.text_views = [];
-    // $scope.app_name = $routeParams['appId'];
-
+    myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("edit_text_views");
+    $scope.existing_edit_text_views = $firebaseArray(myFirebaseRef);
+    $scope.edit_text_views = [];
     $scope.add = function () {
-      $scope.text_views.push({
+      $scope.edit_text_views.push({
       	ui_name: null,
         ui_name_placeholder: "enter name",
         font_size: null,
@@ -25,6 +20,8 @@ angular.module('dynamoUiApp')
         height_placeholder: "height",
         width: null,
         width_placeholder: "width",
+        input_placeholder: null,
+        input_placeholder_placeholder: "Default Placeholder Text"
       });
     } // add function
 
@@ -36,21 +33,22 @@ angular.module('dynamoUiApp')
       return false;
     }
 
-    $scope.save_item = function(text_view) {
-        if (text_view.ui_name.length != 0){
-            var str = text_view.ui_name;
+    $scope.save_item = function(edit_text) {
+        if (edit_text.ui_name.length != 0){
+            var str = edit_text.ui_name;
             var obj = {}
-            obj[text_view.ui_name] = {
-                ui_name: text_view.ui_name,
-                height: text_view.height,
-                width:text_view.width,
-                color:text_view.color,
-                font_color: text_view.font_color,
-                font_size: text_view.font_size,
-                text: text_view.text,
+            obj[edit_text.ui_name] = {
+                ui_name: edit_text.ui_name,
+                height: edit_text.height,
+                width:edit_text.width,
+                color:edit_text.color,
+                font_color: edit_text.font_color,
+                font_size: edit_text.font_size,
+                text: edit_text.text,
+                input_placeholder: edit_text.input_placeholder
             };
             myFirebaseRef.update(obj);
-            $scope.text_views = [];
+            $scope.edit_text_views = [];
         }
         
     }
@@ -58,7 +56,7 @@ angular.module('dynamoUiApp')
     $scope.colorChange = function(id, hex) {
     	var foo = {};
     	foo[id]=hex;
-	    myFirebaseRef.child($scope.current_text_view.textViewName).update(foo);
+	    myFirebaseRef.child($scope.current_edit_text.textViewName).update(foo);
     }
 
     // color picker
@@ -73,7 +71,6 @@ angular.module('dynamoUiApp')
 	        if(opacity) hex += ', ' + opacity;
 	        try {
 	          $scope.colorChange($(this).attr('id'), hex);
-	          // console.log($(this).attr('id'));
 	          console.log(hex);
 	        } catch(e) {}
 	        $(this).select();
@@ -81,6 +78,4 @@ angular.module('dynamoUiApp')
 	      theme: 'bootstrap'
 	    });
   });
-
 });
-
