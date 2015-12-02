@@ -2,28 +2,28 @@
 angular.module('dynamoUiApp')
   .controller('TextViewsCtrl', function ($scope, $routeParams, $firebaseObject, $firebaseArray) {
     var myFirebaseRef = new Firebase('https://hackwestern.firebaseio.com/');
+    var nonePlaceHolder = "DYNAMO_NONE";
     myFirebaseRef = myFirebaseRef.child($routeParams['appId']).child("text_views");
 
     $scope.existing_text_views = $firebaseArray(myFirebaseRef);
 
     $scope.text_views = [];
-    // $scope.app_name = $routeParams['appId'];
 
     $scope.add = function () {
       $scope.text_views.push({
-      	ui_name: null,
+      	ui_name: "",
         ui_name_placeholder: "enter name",
-        font_size: null,
+        font_size: "",
         font_size_placeholder: "20",
-        text: null,
+        text: "",
         text_placeholder: "enter text",
-        color: null,
+        color: "",
         color_placeholder: "#ff99ee",
-        font_color: null,
+        font_color: "",
         font_color_placeholder: "#000000",
-        height: null,
+        height: "",
         height_placeholder: "height",
-        width: null,
+        width: "",
         width_placeholder: "width",
       });
     } // add function
@@ -55,32 +55,32 @@ angular.module('dynamoUiApp')
         
     }
 
-    $scope.colorChange = function(id, hex) {
-    	var foo = {};
-    	foo[id]=hex;
-	    myFirebaseRef.child($scope.current_text_view.textViewName).update(foo);
-    }
+    // $scope.colorChange = function(id, hex) {
+    // 	var foo = {};
+    // 	foo[id]=hex;
+	   //  myFirebaseRef.child($scope.current_text_view.textViewName).update(foo);
+    // }
 
     // color picker
-    var colpick = $('.demo').each(function() {
-	    $(this).minicolors({
-	      control: $(this).attr('data-control') || 'hue',
-	      inline: $(this).attr('data-inline') === 'true',
-	      letterCase: 'lowercase',
-	      opacity: false,
-	      change: function(hex, opacity) {
-	        if(!hex) return;
-	        if(opacity) hex += ', ' + opacity;
-	        try {
-	          $scope.colorChange($(this).attr('id'), hex);
-	          // console.log($(this).attr('id'));
-	          console.log(hex);
-	        } catch(e) {}
-	        $(this).select();
-	      },
-	      theme: 'bootstrap'
-	    });
-  });
+    // var colpick = $('.demo').each(function() {
+	   //  $(this).minicolors({
+	   //    control: $(this).attr('data-control') || 'hue',
+	   //    inline: $(this).attr('data-inline') === 'true',
+	   //    letterCase: 'lowercase',
+	   //    opacity: false,
+	   //    change: function(hex, opacity) {
+	   //      if(!hex) return;
+	   //      if(opacity) hex += ', ' + opacity;
+	   //      try {
+	   //        $scope.colorChange($(this).attr('id'), hex);
+	   //        // console.log($(this).attr('id'));
+	   //        console.log(hex);
+	   //      } catch(e) {}
+	   //      $(this).select();
+	   //    },
+	   //    theme: 'bootstrap'
+	   //  });
+    // });
 
 });
 

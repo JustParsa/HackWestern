@@ -10,19 +10,19 @@ angular.module('dynamoUiApp')
 
     $scope.add = function () {
       $scope.btn_views.push({ 
-        buttonName: null,
+        buttonName: "",
         buttonName_placeholder: "enter name",
-        height: null,
+        height: "",
         height_placeholder: "height",
-        width: null,
+        width: "",
         width_placeholder: "width",
-        font_size: null,
+        font_size: "",
         font_size_placeholder: "20",
-        text: null,
+        text: "",
         text_placeholder: "enter text",
-        color: null,
+        color: "",
         color_placeholder: "#ff99ee",
-        font_color: null,
+        font_color: "",
         font_color_placeholder: "#000000",
       });
     } // add function
